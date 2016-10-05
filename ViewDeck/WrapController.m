@@ -186,6 +186,14 @@
     return [self.wrappedController shouldAutorotateToInterfaceOrientation:interfaceOrientation];
 }
 
+- (BOOL)shouldAutorotate {
+    return YES;
+}
+
+- (NSUInteger)supportedInterfaceOrientations {
+    return [(id)self.wrappedController supportedInterfaceOrientations];
+}
+
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     [super willAnimateRotationToInterfaceOrientation:toInterfaceOrientation duration:duration];
     [self.wrappedController willAnimateRotationToInterfaceOrientation:toInterfaceOrientation duration:duration];
